@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Workout } = require('../../models')
 
 
-router.get("/exercise", (req, res) => {
+router.get("/workouts", (req, res) => {
     Workout.find({})
     .then(data => {
         console.log(data)
@@ -13,7 +13,7 @@ router.get("/exercise", (req, res) => {
     })
 })
 
-router.put("/exercise/:id", (req, res) => {
+router.put("/workouts/:id", (req, res) => {
     const id = req.params.id;
     const body = req.body
 
