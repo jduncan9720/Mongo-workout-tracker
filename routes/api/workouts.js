@@ -13,6 +13,36 @@ router.get("/workouts", (req, res) => {
     })
 })
 
+router.post("/workouts", (req, res) => {
+    Workout.create({})
+    .then(data => {
+        res.json(data)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+});
+
+router.get("/api/workouts/range", (req, res) => {
+    Workout.find()
+    .then(data => {
+        res.json(data)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+});
+
+router.post("/api/workouts/range", (req, res) => {
+    Workout.create({})
+    .then(data => {
+        res.json(data)
+    })
+    .catch(err => {
+        res.json(err)
+    })
+});
+
 router.put("/workouts/:id", (req, res) => {
     const id = req.params.id;
     const body = req.body
