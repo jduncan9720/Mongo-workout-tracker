@@ -25,6 +25,28 @@ router.put("/workouts/:id", (req, res) => {
     .catch(err => {
         res.status(400).json(err)
     })
+});
+
+router.post("/workouts", (req, res) => {
+    Workout.create({})
+    .then(data => {
+        console.log(data)
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(400).json(err)
+    })
+})
+
+router.get("/workouts/range", (req, res) => {
+    Workout.find({}).limit(7)
+    .then(data => {
+        console.log(data)
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(400).json(err)
+    })
 })
 
 
